@@ -138,6 +138,45 @@ export const Pillars = () => {
     return () => targets.forEach((t) => { t.removeEventListener("mouseenter", enter); t.removeEventListener("mouseleave", leave); });
   }, []);
 
+  /* Mobile: animate each visual from t=0 to t=1 when its card enters the viewport */
+  useEffect(() => {
+    if (window.innerWidth >= 1024) return;
+    const cards = cardsRef.current.filter(Boolean) as HTMLElement[];
+    if (cards.length === 0) return;
+
+    const rafs: number[] = [];
+    const obs = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const idx = cards.indexOf(entry.target as HTMLElement);
+          if (idx < 0) return;
+          const visual = visualRefs.current[idx];
+          if (!visual) return;
+
+          /* Animate t from 0 to 1 with easeOutCubic over 1.2s */
+          const start = performance.now();
+          const duration = 1200;
+          const tick = (now: number) => {
+            const t = Math.min(1, (now - start) / duration);
+            const eased = 1 - Math.pow(1 - t, 3);
+            visual.update(eased);
+            if (t < 1) rafs[idx] = requestAnimationFrame(tick);
+          };
+          rafs[idx] = requestAnimationFrame(tick);
+          obs.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.25, rootMargin: "0px 0px -10% 0px" },
+    );
+
+    cards.forEach((c) => obs.observe(c));
+    return () => {
+      obs.disconnect();
+      rafs.forEach((id) => id && cancelAnimationFrame(id));
+    };
+  }, []);
+
   return (
     <section
       ref={wrapRef}

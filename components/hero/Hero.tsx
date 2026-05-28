@@ -37,9 +37,9 @@ export const Hero = () => {
     <section
       ref={heroRef}
       id="top"
-      className="relative z-[1] min-h-screen w-full"
+      className="relative z-[1] w-full lg:min-h-screen"
     >
-      <Container className="grid min-h-screen items-center gap-10 pt-[100px] pb-12 lg:grid-cols-2 lg:pt-[120px] lg:pb-[48px] lg:gap-[60px]">
+      <Container className="grid content-start items-start gap-10 pt-[100px] pb-14 lg:min-h-screen lg:grid-cols-2 lg:content-center lg:items-center lg:pt-[120px] lg:pb-[48px] lg:gap-[60px]">
         {/* ── Left: copy ── */}
         <div className="flex flex-col">
           {/* Eyebrow */}
@@ -51,15 +51,12 @@ export const Hero = () => {
             <span>ZW · Q2 26 · Platform release 4.1</span>
           </div>
 
-          {/* Headline — font size capped so it never overflows its column */}
+          {/* Headline — small floor for mobile, original curve on desktop */}
           <h1
             className="m-0 mb-5 font-display font-medium tracking-[-0.035em]"
             style={{
-              fontSize: "clamp(40px, min(4vw, 72px), 76px)",
+              fontSize: "clamp(30px, 4vw, 72px)",
               lineHeight: 1.0,
-              /* Let the browser wrap at word boundaries, never mid-word */
-              overflowWrap: "break-word",
-              wordBreak: "normal",
             }}
           >
             <FadeInHeadline

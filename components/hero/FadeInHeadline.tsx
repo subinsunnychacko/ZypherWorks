@@ -14,11 +14,12 @@ type Props = {
 
 /**
  * Character-by-character typing fade-in. Each character slides up a few pixels,
- * clears its blur, and fades in staggered left-to-right — creating a smooth
- * "being written" feel without a mechanical cursor.
+ * clears its blur, and fades in staggered left-to-right.
  *
- * Gradient spans are preserved by wrapping the gradient class around a container
- * whose children are the character spans; the background-clip applies through.
+ * Each WORD is wrapped in an inline-block `white-space: nowrap` container so
+ * words stay glued together as a unit when the line wraps — only the spaces
+ * between words are breakable wrap points. The inner `.fi-char` spans still
+ * get the per-character GSAP animation.
  */
 export const FadeInHeadline = ({
   lines,
@@ -50,20 +51,43 @@ export const FadeInHeadline = ({
     <span ref={rootRef}>
       {lines.map((line, li) => (
         <span key={li} className="block">
-          {line.parts.map((part, pi) => (
-            <span key={pi} className={part.className}>
-              {part.text.split("").map((char, ci) => (
-                <span
-                  key={ci}
-                  className="fi-char inline-block"
-                  /* Preserve kerning — don't collapse whitespace characters */
-                  style={char === " " ? { whiteSpace: "pre" } : undefined}
-                >
-                  {char}
-                </span>
-              ))}
-            </span>
-          ))}
+          {line.parts.map((part, pi) => {
+            /* Split on whitespace but keep the spaces as separate tokens */
+            const tokens = part.text.split(/(\s+)/).filter((t) => t.length > 0);
+            return (
+              <span key={pi} className={part.className}>
+                {tokens.map((token, ti) => {
+                  const isSpace = /^\s+$/.test(token);
+                  if (isSpace) {
+                    /* Space — single fi-char span, allow wrapping here */
+                    return (
+                      <span
+                        key={ti}
+                        className="fi-char inline-block"
+                        style={{ whiteSpace: "pre" }}
+                      >
+                        {token}
+                      </span>
+                    );
+                  }
+                  /* Word — wrap chars in a no-break inline-block so the word
+                     stays together even when the line wraps */
+                  return (
+                    <span
+                      key={ti}
+                      className="inline-block whitespace-nowrap align-baseline"
+                    >
+                      {token.split("").map((char, ci) => (
+                        <span key={ci} className="fi-char inline-block">
+                          {char}
+                        </span>
+                      ))}
+                    </span>
+                  );
+                })}
+              </span>
+            );
+          })}
         </span>
       ))}
     </span>
