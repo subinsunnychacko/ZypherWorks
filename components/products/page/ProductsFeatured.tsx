@@ -119,17 +119,17 @@ export const ProductsFeatured = () => {
       }}
     >
       <div className="lg:sticky lg:top-0 lg:flex lg:h-screen lg:flex-col lg:justify-center lg:overflow-hidden">
-        <div className="mx-auto w-full max-w-[1440px] px-[clamp(20px,5vw,80px)] py-[clamp(60px,8vw,120px)] lg:py-[clamp(32px,3vw,52px)]">
+        <div className="mx-auto w-full max-w-[1440px] px-[clamp(20px,5vw,80px)] py-[clamp(60px,8vw,120px)] lg:py-[clamp(40px,3.6vw,64px)]">
         {/* Header */}
-        <div className="mb-10 flex flex-col gap-5 lg:mb-10 lg:flex-row lg:items-end lg:justify-between">
+        <div className="mb-10 flex flex-col gap-5 lg:mb-7 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <div className="mb-3 flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.12em]" style={{ color: "oklch(0.45 0.012 260)" }}>
               <span className="block h-px w-[22px]" style={{ background: "oklch(0.45 0.012 260)" }} />
               {"// FLAGSHIP DEEP-DIVE · STAY TO SEE ALL 4"}
             </div>
             <h2
-              className="m-0 max-w-[760px] font-display font-medium tracking-[-0.03em]"
-              style={{ fontSize: "clamp(26px, 3.2vw, 46px)", lineHeight: 1.05, color: "var(--ink-dark)" }}
+              className="m-0 max-w-[720px] font-display font-medium tracking-[-0.03em]"
+              style={{ fontSize: "clamp(24px, 2.6vw, 38px)", lineHeight: 1.05, color: "var(--ink-dark)" }}
             >
               Ease Fit — the platform that
               <br />
