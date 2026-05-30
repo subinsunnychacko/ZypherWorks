@@ -4,10 +4,10 @@ import { useEffect, useRef } from "react";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
 
 const METRICS = [
-  { n: "14×", l: "avg ops throughput lift after 90 days on the platform" },
-  { n: "42 ms", l: "p95 API latency across all production tenants" },
-  { n: "$48M", l: "in customer revenue flowing through our automation" },
-  { n: "11k+", l: "operators running their business on a ZypherWorks product" },
+  { n: "3.8×", l: "avg ops throughput lift after 90 days on the platform" },
+  { n: "95 ms", l: "p95 API latency across all production tenants" },
+  { n: "$2.8M", l: "in customer revenue flowing through our automation" },
+  { n: "380+", l: "operators running their business on a ZypherWorks product" },
 ];
 
 export const Metrics = () => {

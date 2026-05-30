@@ -72,8 +72,8 @@ export const PricingPageCTA = () => {
         applied to your numbers.
       </p>
       <div className="js-pcta relative flex flex-wrap justify-center gap-3">
-        <ButtonPrimary>Get a custom quote</ButtonPrimary>
-        <ButtonGhost>Book founders call</ButtonGhost>
+        <ButtonPrimary href="/contact">Get a custom quote</ButtonPrimary>
+        <ButtonGhost href="/products">Explore the platform</ButtonGhost>
       </div>
     </section>
   );

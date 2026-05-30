@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SITE_URL } from "@/lib/site";
 import { Atmosphere } from "@/components/Atmosphere";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
@@ -10,9 +11,29 @@ import { CompanyGallery } from "@/components/company/page/CompanyGallery";
 import { CompanyPageCTA } from "@/components/company/page/CompanyPageCTA";
 
 export const metadata: Metadata = {
-  title: "Company · ZypherWorks",
+  title: "About ZypherWorks — Operator-Led Team",
+  alternates: { canonical: `${SITE_URL}/company` },
   description:
-    "Remote-first, operator-led. 42 people across 9 timezones building the platforms that 11,000+ businesses run on every day.",
+    "Remote-first business automation startup, founded 2021. Built by operators, for operators — 380+ businesses trust ZypherWorks to automate what slows them down.",
+  openGraph: {
+    title: "About ZypherWorks — Operator-Led Team | ZypherWorks",
+    description:
+      "Remote-first business automation startup, founded 2021. Built by operators, for operators — 380+ businesses trust ZypherWorks to automate what slows them down.",
+    url: `${SITE_URL}/company`,
+    siteName: "ZypherWorks",
+    locale: "en_US",
+    type: "website",
+    images: [{ url: "/og/company.png", width: 1200, height: 630, alt: "ZypherWorks — Operator-Led Business Automation Team" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    site: "@zypherworks",
+    creator: "@zypherworks",
+    title: "About ZypherWorks — Operator-Led Team | ZypherWorks",
+    description:
+      "Remote-first business automation startup, founded 2021. Built by operators, for operators — 380+ businesses trust ZypherWorks to automate what slows them down.",
+    images: ["/og/company.png"],
+  },
 };
 
 export default function CompanyPage() {

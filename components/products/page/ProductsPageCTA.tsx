@@ -71,8 +71,8 @@ export const ProductsPageCTA = () => {
         doesn&apos;t exist in software yet — we&apos;d like to hear about it.
       </p>
       <div className="js-pcta relative flex flex-wrap justify-center gap-3">
-        <ButtonPrimary>Start a product conversation</ButtonPrimary>
-        <ButtonGhost>See platform &amp; pricing</ButtonGhost>
+        <ButtonPrimary href="/contact">Start a product conversation</ButtonPrimary>
+        <ButtonGhost href="/pricing">See platform &amp; pricing</ButtonGhost>
       </div>
     </section>
   );

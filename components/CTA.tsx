@@ -75,8 +75,8 @@ export const CTA = () => {
         with a 2-week shape of what the platform looks like.
       </p>
       <div className="js-cta relative flex flex-wrap justify-center gap-3">
-        <ButtonPrimary>Start a project</ButtonPrimary>
-        <ButtonGhost>See product pricing</ButtonGhost>
+        <ButtonPrimary href="/contact">Start a project</ButtonPrimary>
+        <ButtonGhost href="/pricing">See product pricing</ButtonGhost>
       </div>
     </section>
   );

@@ -6,6 +6,27 @@ import { Kicker } from "../../ui/Kicker";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
 import { PRICING_FAQ } from "./data";
 
+const EXT = "text-accent underline underline-offset-2 hover:text-ink-2 transition-colors duration-200";
+
+/* Rich JSX overrides for FAQ answers that reference external standards */
+const RICH_ANSWERS: Record<number, React.ReactNode> = {
+  5: (
+    <>
+      Your data lives in your cloud account on Scale and Custom, or our{" "}
+      <a
+        href="https://www.aicpa-cima.com/topic/audit-assurance/soc-suite-of-services"
+        target="_blank"
+        rel="noopener noreferrer"
+        className={EXT}
+      >
+        SOC 2 Type II
+      </a>
+      {" "}infra on Launch. You retain full ownership at every tier and can export at any time
+      via the typed SDK.
+    </>
+  ),
+};
+
 export const PricingFAQ = () => {
   const ref = useRef<HTMLElement>(null);
   const [openIdx, setOpenIdx] = useState<number | null>(0);
@@ -52,13 +73,16 @@ export const PricingFAQ = () => {
               <div key={item.q} className={"js-faq-row border-line " + (i !== PRICING_FAQ.length - 1 ? "border-b" : "")}>
                 <button
                   onClick={() => setOpenIdx(open ? null : i)}
+                  aria-expanded={open}
+                  aria-controls={`faq-panel-${i}`}
+                  id={`faq-trigger-${i}`}
                   className="group flex w-full items-center justify-between gap-4 p-5 text-left transition-colors duration-200 hover:bg-[oklch(1_0_0_/_0.02)] sm:p-6"
                 >
                   <span className="font-display text-[14.5px] font-medium tracking-[-0.005em] sm:text-[16px]">
                     {item.q}
                   </span>
                   <span
-                    className="grid h-7 w-7 flex-shrink-0 place-items-center rounded-full border border-line text-accent transition-all duration-300"
+                    className="grid h-9 w-9 flex-shrink-0 place-items-center rounded-full border border-line text-accent transition-all duration-300"
                     style={{
                       background: open ? "color-mix(in oklch, var(--accent) 18%, transparent)" : "oklch(1 0 0 / 0.03)",
                       transform: open ? "rotate(45deg)" : "rotate(0deg)",
@@ -75,7 +99,7 @@ export const PricingFAQ = () => {
                 >
                   <div className="overflow-hidden">
                     <p className="m-0 px-5 pb-6 text-[13.5px] leading-[1.65] text-ink-2 sm:px-6 sm:text-[14.5px]">
-                      {item.a}
+                      {RICH_ANSWERS[i] ?? item.a}
                     </p>
                   </div>
                 </div>

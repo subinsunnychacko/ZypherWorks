@@ -29,7 +29,7 @@ export const MILESTONES: Milestone[] = [
     description:
       "What started as a single tool became a platform. Ease Fit went live with three modules and a typed SDK — the foundation that every product since has been built on.",
     image: PICSUM("zw-mile-2022", 1200, 720),
-    metric: { value: "120+", label: "studios on day one" },
+    metric: { value: "18", label: "studios in the first month" },
   },
   {
     year: "2023",
@@ -38,34 +38,34 @@ export const MILESTONES: Milestone[] = [
     description:
       "We crystallized the platform primitives — bookings, CRM, billing, comms, automation, ML — into a shared spine. New products went from quarters to weeks.",
     image: PICSUM("zw-mile-2023", 1200, 720),
-    metric: { value: "12", label: "platform modules shipped" },
+    metric: { value: "6", label: "platform modules shipped" },
   },
   {
     year: "2024",
-    title: "Series A · $14M",
+    title: "Seed Round · $2.2M",
     tagline: "Building the team",
     description:
-      "Led by Sequoia with participation from Y Combinator and a handful of operator-investors. The team grew from 8 to 32 — and we opened our second office in Lisbon.",
+      "Backed by a small group of operator-investors who've built and scaled businesses of their own. The team grew from 4 to 12 — fully remote, no office overhead.",
     image: PICSUM("zw-mile-2024", 1200, 720),
-    metric: { value: "$14M", label: "Series A · operator-led" },
+    metric: { value: "$2.2M", label: "Seed · operator-backed" },
   },
   {
     year: "2025",
-    title: "Six products. One stack.",
+    title: "Four products. One stack.",
     tagline: "Multiplying impact",
     description:
-      "Vega CRM, Forge Ops, Lume Insight, Nova Billing, and Pulse Inbox all shipped on top of the same platform — proving the composable thesis at scale.",
+      "Vega CRM, Forge Ops, and Nova Billing shipped on top of the same platform — proving the composable thesis with real paying customers.",
     image: PICSUM("zw-mile-2025", 1200, 720),
-    metric: { value: "11k+", label: "operators on the platform" },
+    metric: { value: "240+", label: "operators on the platform" },
   },
   {
     year: "2026",
     title: "Today, and onward",
-    tagline: "The next decade",
+    tagline: "The next chapter",
     description:
-      "ZypherWorks now powers $48M+ of customer revenue flowing through our automation, with a remote-first team of 42 across 9 timezones — and we're just getting started.",
+      "ZypherWorks now powers $2.8M+ of customer revenue flowing through our automation, with a remote-first team of 16 across 4 timezones — and we're just getting started.",
     image: PICSUM("zw-mile-2026", 1200, 720),
-    metric: { value: "$48M", label: "customer revenue · automated" },
+    metric: { value: "$2.8M", label: "customer revenue · automated" },
   },
 ];
 
@@ -93,6 +93,7 @@ export type Value = {
   title: string;
   description: string;
   accent: string;
+  externalLink?: { href: string; label: string };
 };
 
 export const VALUES: Value[] = [
@@ -119,6 +120,10 @@ export const VALUES: Value[] = [
     title: "Boring infrastructure",
     description: "The platform should be the calmest part of your operation. Multi-region, observable, SOC 2 II — designed to never make the news.",
     accent: "oklch(0.85 0.16 70)",
+    externalLink: {
+      href: "https://www.aicpa-cima.com/topic/audit-assurance/soc-suite-of-services",
+      label: "What is SOC 2 II?",
+    },
   },
   {
     ic: "spark",
@@ -136,9 +141,9 @@ export const VALUES: Value[] = [
 
 export const COMPANY_STATS = [
   { value: "2021", label: "founded · remote-first" },
-  { value: "42",   label: "team across 9 timezones" },
-  { value: "11k+", label: "operators served daily" },
-  { value: "$48M", label: "of revenue automated" },
+  { value: "16",   label: "team across 4 timezones" },
+  { value: "240+", label: "operators served daily" },
+  { value: "$2.8M", label: "of revenue automated" },
 ];
 
 export type GalleryPhoto = {
@@ -152,7 +157,7 @@ export const GALLERY: GalleryPhoto[] = [
   { src: PICSUM("zw-culture-2",  600, 800),  caption: "The build room · SF HQ",            span: "tall" },
   { src: PICSUM("zw-culture-3",  600, 500),  caption: "Quarterly platform review" },
   { src: PICSUM("zw-culture-4",  600, 500),  caption: "Customer dinner · NYC" },
-  { src: PICSUM("zw-culture-5",  900, 500),  caption: "Demo day · Berlin office",          span: "wide" },
+  { src: PICSUM("zw-culture-5",  900, 500),  caption: "Demo day · NYC meetup",             span: "wide" },
   { src: PICSUM("zw-culture-6",  600, 700),  caption: "Whiteboards, always",               span: "tall" },
   { src: PICSUM("zw-culture-7",  600, 500),  caption: "Lisbon team retreat" },
   { src: PICSUM("zw-culture-8",  600, 500),  caption: "First customer launch party" },

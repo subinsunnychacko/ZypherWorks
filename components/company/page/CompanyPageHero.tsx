@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import { Container } from "../../ui/Container";
 import { Kicker } from "../../ui/Kicker";
 import { Icon } from "../../ui/Icon";
+import { Breadcrumb } from "../../ui/Breadcrumb";
 import { gsap } from "@/lib/gsap";
 import { COMPANY_STATS, HERO_PHOTOS } from "./data";
 
@@ -85,12 +87,13 @@ export const CompanyPageHero = () => {
         <div className="grid items-center gap-12 lg:grid-cols-[1fr_1fr] lg:gap-16">
           {/* LEFT — copy */}
           <div>
+            <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Company" }]} />
             <div className="js-co-stagger mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-[oklch(1_0_0_/_0.04)] px-3 py-[6px] pl-2 font-mono text-[11px] tracking-[0.04em] text-ink-2">
               <span
                 className="pulse-dot relative inline-block flex-shrink-0"
                 style={{ width: 12, height: 12, borderRadius: "50%", background: "var(--accent)", boxShadow: "0 0 10px var(--accent)" }}
               />
-              REMOTE-FIRST · 9 TIMEZONES · OPERATOR-LED
+              REMOTE-FIRST · 4 TIMEZONES · OPERATOR-LED
             </div>
 
             <Kicker className="js-co-stagger mb-6 w-fit">{"// WHO WE ARE"}</Kicker>
@@ -99,14 +102,14 @@ export const CompanyPageHero = () => {
               className="js-co-stagger m-0 font-display font-medium tracking-[-0.04em]"
               style={{ fontSize: "clamp(38px, 5.4vw, 88px)", lineHeight: 0.98 }}
             >
-              We build platforms
+              We build automation platforms
               <br />
-              <span className="grad">for the people running them.</span>
+              <span className="grad">for the operators running them.</span>
             </h1>
 
             <p className="js-co-stagger mt-7 max-w-[560px] text-[16px] leading-[1.65] text-ink-2 sm:text-[17px]">
-              Forty-two people across nine timezones — engineers, designers, and former
-              operators — quietly building the software that 11,000+ businesses run on every day.
+              Sixteen people across four timezones — engineers, designers, and former
+              operators — building the business automation software that 380+ companies run on every day.
             </p>
 
             <div className="js-co-stagger mt-9 flex flex-wrap items-center gap-3">
@@ -169,11 +172,13 @@ export const CompanyPageHero = () => {
                   animation: "coFloatA 8s ease-in-out infinite alternate",
                 }}
               >
-                <img
+                <Image
                   src={HERO_PHOTOS[0]}
-                  alt="ZypherWorks team"
-                  className="h-full w-full object-cover"
-                  loading="eager"
+                  alt="ZypherWorks founding team — remote-first business automation startup"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 80vw, 381px"
+                  className="object-cover"
                   style={{ filter: "saturate(1.05) contrast(1.02)" }}
                 />
                 <span
@@ -200,11 +205,13 @@ export const CompanyPageHero = () => {
                   animation: "coFloatB 7s ease-in-out infinite alternate",
                 }}
               >
-                <img
+                <Image
                   src={HERO_PHOTOS[1]}
-                  alt="ZypherWorks office"
-                  className="h-full w-full object-cover"
-                  loading="eager"
+                  alt="ZypherWorks remote workspace — platform engineering team"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 50vw, 246px"
+                  className="object-cover"
                   style={{ filter: "saturate(1.05) contrast(1.05)" }}
                 />
                 <div
@@ -230,11 +237,13 @@ export const CompanyPageHero = () => {
                   animation: "coFloatC 9s ease-in-out infinite alternate",
                 }}
               >
-                <img
+                <Image
                   src={HERO_PHOTOS[2]}
-                  alt="ZypherWorks product screen"
-                  className="h-full w-full object-cover"
-                  loading="eager"
+                  alt="ZypherWorks business automation platform dashboard"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 50vw, 280px"
+                  className="object-cover"
                   style={{ filter: "saturate(1.1) contrast(1.05)" }}
                 />
                 <span

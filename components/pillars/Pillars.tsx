@@ -20,14 +20,14 @@ const PILLARS: Pillar[] = [
     ic: "bolt",
     t: "Automation-first",
     d: "Replace manual cycles with event-driven workflows that adapt as your business changes. Triggers, branches and humans in one runtime.",
-    m: ["200+ triggers", "Sub-second", "Branching DSL"],
+    m: ["40+ triggers", "Sub-second", "Branching DSL"],
     visual: "flow",
   },
   {
     ic: "cube",
     t: "Composable cores",
     d: "Modular product blocks — bookings, CRM, billing, comms — that snap together cleanly. Build a platform, not a monolith.",
-    m: ["12 modules", "Typed APIs", "Versioned"],
+    m: ["6 modules", "Typed APIs", "Versioned"],
     visual: "modules",
   },
   {
@@ -48,7 +48,7 @@ const PILLARS: Pillar[] = [
     ic: "shield",
     t: "Built to scale",
     d: "Multi-region infrastructure, observability and SOC 2 controls — quietly handling the load while you focus on customers.",
-    m: ["SOC 2 · II", "99.99%", "Multi-region"],
+    m: ["SOC 2 · II", "99.9%", "Redundant infra"],
     visual: "shield",
   },
   {
@@ -184,7 +184,7 @@ export const Pillars = () => {
       className="pillars-wrap relative z-[1]"
       style={{ height: "520vh" }}
     >
-      <div className="pillars-sticky sticky top-0 flex h-screen flex-col overflow-hidden" style={{ willChange: "transform" }}>
+      <div className="pillars-sticky sticky top-0 flex h-screen flex-col overflow-hidden">
         {/* Header */}
         <div className="grid flex-shrink-0 grid-cols-1 items-end gap-8 px-[clamp(20px,5vw,96px)] pt-[90px] pb-7 lg:grid-cols-[1.4fr_1fr] lg:gap-[60px]">
           <div>
@@ -303,15 +303,29 @@ export const Pillars = () => {
                 <p className="m-0 text-[clamp(11px,0.85vw,13px)] leading-[1.55] text-ink-2">{p.d}</p>
               </div>
               <div className="mt-auto flex flex-wrap gap-[5px]">
-                {p.m.map((x) => (
-                  <span
-                    key={x}
-                    className="rounded-full border border-line px-[8px] py-[3px] font-mono text-[9px] uppercase tracking-[0.08em] text-ink-2"
-                    style={{ background: "oklch(1 0 0 / 0.04)" }}
-                  >
-                    {x}
-                  </span>
-                ))}
+                {p.m.map((x) => {
+                  const BADGE_LINKS: Record<string, string> = {
+                    "OpenAPI":   "https://www.openapis.org/",
+                    "SOC 2 · II": "https://www.aicpa-cima.com/topic/audit-assurance/soc-suite-of-services",
+                  };
+                  const href = BADGE_LINKS[x];
+                  const cls = "rounded-full border border-line px-[8px] py-[3px] font-mono text-[9px] uppercase tracking-[0.08em] text-ink-2";
+                  const style = { background: "oklch(1 0 0 / 0.04)" };
+                  return href ? (
+                    <a
+                      key={x}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={cls + " transition-colors duration-200 hover:text-accent hover:border-accent"}
+                      style={style}
+                    >
+                      {x}
+                    </a>
+                  ) : (
+                    <span key={x} className={cls} style={style}>{x}</span>
+                  );
+                })}
               </div>
             </article>
           ))}
@@ -335,7 +349,7 @@ export const Pillars = () => {
             <p className="m-0 text-[clamp(12px,1vw,14px)] leading-[1.55] text-ink-2">
               Every ZypherWorks product — including Ease Fit — is composed from these blocks. Continue scrolling to see one in production.
             </p>
-            <div className="mt-auto"><ButtonPrimary>See it in a product</ButtonPrimary></div>
+            <div className="mt-auto"><ButtonPrimary href="/products">See it in a product</ButtonPrimary></div>
           </article>
         </div>
       </div>

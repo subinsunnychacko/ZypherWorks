@@ -35,9 +35,9 @@ export const PRODUCTS: Product[] = [
     gradient: "linear-gradient(135deg, oklch(0.85 0.16 145), oklch(0.65 0.18 165))",
     accent: "oklch(0.78 0.17 155)",
     metrics: [
-      { label: "operators", value: "11k+" },
-      { label: "bookings · mo", value: "2.4M" },
-      { label: "retention · yr 1", value: "92%" },
+      { label: "operators", value: "380+" },
+      { label: "bookings · mo", value: "82k" },
+      { label: "retention · yr 1", value: "87%" },
     ],
     features: [
       { ic: "cal", label: "Smart bookings" },
@@ -60,9 +60,9 @@ export const PRODUCTS: Product[] = [
     gradient: "linear-gradient(135deg, oklch(0.72 0.2 25), oklch(0.55 0.22 350))",
     accent: "oklch(0.72 0.2 25)",
     metrics: [
-      { label: "pipelines", value: "8.2k" },
-      { label: "forecast accuracy", value: "94%" },
-      { label: "conversion lift", value: "+34%" },
+      { label: "pipelines", value: "280" },
+      { label: "forecast accuracy", value: "84%" },
+      { label: "conversion lift", value: "+18%" },
     ],
     features: [
       { ic: "users", label: "Pipeline intel" },
@@ -85,9 +85,9 @@ export const PRODUCTS: Product[] = [
     gradient: "linear-gradient(135deg, oklch(0.78 0.17 60), oklch(0.58 0.22 30))",
     accent: "oklch(0.82 0.17 55)",
     metrics: [
-      { label: "workflows", value: "62k" },
-      { label: "p95 latency", value: "180ms" },
-      { label: "triggers", value: "200+" },
+      { label: "workflows", value: "2.1k" },
+      { label: "p95 latency", value: "220ms" },
+      { label: "triggers", value: "40+" },
     ],
     features: [
       { ic: "bolt", label: "Event triggers" },
@@ -110,7 +110,7 @@ export const PRODUCTS: Product[] = [
     gradient: "linear-gradient(135deg, oklch(0.72 0.18 280), oklch(0.52 0.22 250))",
     accent: "oklch(0.72 0.18 280)",
     metrics: [
-      { label: "events / day", value: "3.2M" },
+      { label: "events / day", value: "12K" },
       { label: "warehouse sync", value: "Native" },
       { label: "detection", value: "ML" },
     ],
@@ -135,9 +135,9 @@ export const PRODUCTS: Product[] = [
     gradient: "linear-gradient(135deg, oklch(0.8 0.16 195), oklch(0.55 0.2 220))",
     accent: "oklch(0.8 0.16 195)",
     metrics: [
-      { label: "MRR processed", value: "$48M" },
-      { label: "failed-pay recovery", value: "+38%" },
-      { label: "jurisdictions", value: "42" },
+      { label: "MRR processed", value: "$840k" },
+      { label: "failed-pay recovery", value: "+22%" },
+      { label: "jurisdictions", value: "12" },
     ],
     features: [
       { ic: "chart", label: "Usage metering" },
@@ -160,9 +160,9 @@ export const PRODUCTS: Product[] = [
     gradient: "linear-gradient(135deg, oklch(0.84 0.16 105), oklch(0.6 0.2 145))",
     accent: "oklch(0.82 0.18 110)",
     metrics: [
-      { label: "channels", value: "8+" },
+      { label: "channels", value: "5+" },
       { label: "AI drafting", value: "Built-in" },
-      { label: "response time", value: "−62%" },
+      { label: "response time", value: "−35%" },
     ],
     features: [
       { ic: "msg", label: "Channel unification" },

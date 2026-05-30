@@ -71,8 +71,8 @@ export const CompanyPageCTA = () => {
         engineering — we&apos;re always happy to hear from people who think operationally.
       </p>
       <div className="js-pcta relative flex flex-wrap justify-center gap-3">
-        <ButtonPrimary>See open roles</ButtonPrimary>
-        <ButtonGhost>hello@zypherworks.io</ButtonGhost>
+        <ButtonPrimary href="/contact">See open roles</ButtonPrimary>
+        <ButtonGhost href="mailto:hello@zypherworks.io">hello@zypherworks.io</ButtonGhost>
       </div>
     </section>
   );

@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { Container } from "../../ui/Container";
 import { Kicker } from "../../ui/Kicker";
 import { Icon } from "../../ui/Icon";
+import { Breadcrumb } from "../../ui/Breadcrumb";
 import { gsap } from "@/lib/gsap";
 import { VALUE_PROPS } from "./data";
 import { HeroCardStack } from "./HeroCardStack";
@@ -53,13 +54,14 @@ export const PricingPageHero = () => {
         <div className="grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-16">
           {/* LEFT — conversion-focused copy */}
           <div>
+            <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Pricing" }]} />
             {/* Eyebrow */}
             <div className="js-pr-stagger mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-[oklch(1_0_0_/_0.04)] px-3 py-[6px] pl-2 font-mono text-[11px] tracking-[0.04em] text-ink-2">
               <span
                 className="pulse-dot relative inline-block flex-shrink-0"
                 style={{ width: 12, height: 12, borderRadius: "50%", background: "var(--accent-2)", boxShadow: "0 0 10px var(--accent-2)" }}
               />
-              TRUSTED BY 11K+ OPERATORS · AVG PAYBACK · 4 MONTHS
+              TRUSTED BY 380+ OPERATORS · 60-DAY RISK-FREE PILOT
             </div>
 
             <Kicker className="js-pr-stagger mb-6 w-fit">{"// PRICING THAT PAYS BACK"}</Kicker>
