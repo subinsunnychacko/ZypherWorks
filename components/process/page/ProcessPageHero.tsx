@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { Container } from "../../ui/Container";
 import { Kicker } from "../../ui/Kicker";
 import { Icon } from "../../ui/Icon";
+import { Breadcrumb } from "../../ui/Breadcrumb";
 import { gsap } from "@/lib/gsap";
 import { PHASES, PROCESS_STATS } from "./data";
 
@@ -65,6 +66,9 @@ export const ProcessPageHero = () => {
       />
 
       <Container className="relative z-[1] text-center">
+        <div className="text-left">
+          <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Process" }]} />
+        </div>
         {/* Eyebrow */}
         <div className="js-pp-stagger mx-auto mb-7 inline-flex items-center gap-2 rounded-full border border-line bg-[oklch(1_0_0_/_0.04)] px-3 py-[6px] pl-2 font-mono text-[11px] tracking-[0.04em] text-ink-2">
           <span

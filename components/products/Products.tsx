@@ -92,7 +92,7 @@ export const Products = () => {
             </h2>
           </div>
           <div className="flex flex-wrap gap-6 text-[13px]" style={{ color: "oklch(0.35 0.012 260)" }}>
-            {[["4", "live products"], ["11k+", "operators"], ["92%", "retention · yr 1"]].map(([b, l]) => (
+            {[["4", "live products"], ["380+", "operators"], ["87%", "retention · yr 1"]].map(([b, l]) => (
               <div key={l}>
                 <b className="mb-1 block font-display text-[16px] font-medium" style={{ color: "var(--ink-dark)" }}>{b}</b>
                 {l}

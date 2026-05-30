@@ -71,8 +71,8 @@ export const ProcessPageCTA = () => {
         within 48 hours with a 2-week shape of what Discover would look like for your team.
       </p>
       <div className="js-pcta relative flex flex-wrap justify-center gap-3">
-        <ButtonPrimary>Book a discovery call</ButtonPrimary>
-        <ButtonGhost>Download the process brief</ButtonGhost>
+        <ButtonPrimary href="/contact">Book a discovery call</ButtonPrimary>
+        <ButtonGhost href="/products">Explore our products</ButtonGhost>
       </div>
     </section>
   );

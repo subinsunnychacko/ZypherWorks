@@ -1,19 +1,39 @@
-const COLUMNS: { title: string; links: string[] }[] = [
+const COLUMNS: { title: string; links: { label: string; href: string }[] }[] = [
   {
     title: "Platform",
-    links: ["Overview", "Automation", "Intelligence", "Security"],
+    links: [
+      { label: "Overview",     href: "/" },
+      { label: "Automation",   href: "/products" },
+      { label: "Intelligence", href: "/products" },
+      { label: "Security",     href: "/company" },
+    ],
   },
   {
     title: "Products",
-    links: ["Ease Fit", "Vega CRM", "Forge Ops", "Lume Insight"],
+    links: [
+      { label: "Ease Fit",     href: "/products" },
+      { label: "Vega CRM",     href: "/products" },
+      { label: "Forge Ops",    href: "/products" },
+      { label: "Lume Insight", href: "/products" },
+    ],
   },
   {
     title: "Company",
-    links: ["About", "Careers", "Newsroom", "Contact"],
+    links: [
+      { label: "About",     href: "/company" },
+      { label: "Careers",   href: "/contact" },
+      { label: "Newsroom",  href: "/company" },
+      { label: "Contact",   href: "/contact" },
+    ],
   },
   {
     title: "Resources",
-    links: ["Docs", "Changelog", "Status", "Trust center"],
+    links: [
+      { label: "Docs",         href: "#" },
+      { label: "Changelog",    href: "#" },
+      { label: "Status",       href: "#" },
+      { label: "Trust center", href: "#" },
+    ],
   },
 ];
 
@@ -57,16 +77,16 @@ export const Footer = () => (
       </div>
       {COLUMNS.map((col) => (
         <div key={col.title}>
-          <h6 className="m-0 mb-4 font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-ink-3">
+          <p className="m-0 mb-4 font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-ink-3">
             {col.title}
-          </h6>
+          </p>
           {col.links.map((l) => (
             <a
-              key={l}
-              href="#"
+              key={l.label}
+              href={l.href}
               className="block py-[6px] text-[14px] text-ink-2 transition-colors duration-200 hover:text-ink"
             >
-              {l}
+              {l.label}
             </a>
           ))}
         </div>
@@ -75,7 +95,7 @@ export const Footer = () => (
     <div className="flex flex-col items-start gap-2 border-t border-line pt-[26px] font-mono text-[11.5px] text-ink-3 sm:flex-row sm:items-center sm:justify-between sm:text-[12.5px]">
       <span>© 2026 ZypherWorks Inc. · All systems nominal</span>
       <span style={{ color: "var(--accent)" }}>
-        ● Status · operational · 99.99% · 30d
+        ● Status · operational · 99.9% · 30d
       </span>
     </div>
   </footer>

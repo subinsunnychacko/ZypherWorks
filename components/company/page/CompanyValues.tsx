@@ -91,6 +91,20 @@ const ValueCard = ({ value, index }: { value: typeof VALUES[number]; index: numb
         >
           {value.description}
         </p>
+        {value.externalLink && (
+          <a
+            href={value.externalLink.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative mt-3 inline-flex items-center gap-1 font-mono text-[9.5px] uppercase tracking-[0.1em] text-ink-3 transition-colors duration-200 hover:text-accent"
+            style={{ transform: "translateZ(18px)" }}
+          >
+            {value.externalLink.label}
+            <svg width="8" height="8" viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <path d="M2 8L8 2M4 2h4v4" />
+            </svg>
+          </a>
+        )}
 
         {/* Edge sheen */}
         <span

@@ -24,7 +24,7 @@ export const TIERS: Tier[] = [
     id: "launch",
     name: "Launch",
     tagline: "Pilot one workflow, prove the lift.",
-    priceLabel: "$2.4k",
+    priceLabel: "$1.2k",
     priceUnit: "/mo",
     priceCaption: "starting · 60-day pilot",
     description:
@@ -46,7 +46,7 @@ export const TIERS: Tier[] = [
     id: "scale",
     name: "Scale",
     tagline: "The full platform, run alongside you.",
-    priceLabel: "$7.8k",
+    priceLabel: "$3.8k",
     priceUnit: "/mo",
     priceCaption: "starting · most teams ship here",
     description:
@@ -92,7 +92,7 @@ export const TIERS: Tier[] = [
 export const VALUE_PROPS: { ic: IconName; label: string }[] = [
   { ic: "shield", label: "No commitment beyond 30 days" },
   { ic: "refresh", label: "60-day risk-free pilot" },
-  { ic: "spark",  label: "Average payback in 4 months" },
+  { ic: "spark",  label: "ROI visible before you commit" },
 ];
 
 export const PRICING_FAQ: { q: string; a: string }[] = [

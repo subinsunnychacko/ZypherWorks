@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef } from "react";
+import Image from "next/image";
 import { Icon } from "../../ui/Icon";
 import type { TeamMember } from "./data";
 
@@ -50,12 +51,13 @@ export const TeamCard3D = ({ member }: Props) => {
       >
         {/* Photo with overlay gradient */}
         <div className="relative w-full overflow-hidden" style={{ aspectRatio: "4/5", transform: "translateZ(20px)" }}>
-          <img
+          <Image
             src={member.image}
-            alt={member.name}
-            className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
+            alt={`${member.name} — ${member.role} at ZypherWorks`}
+            fill
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+            className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.06]"
             style={{ filter: "saturate(0.95) contrast(1.02)" }}
-            loading="lazy"
           />
           {/* Bottom gradient for legibility */}
           <span

@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { Container } from "../../ui/Container";
 import { Kicker } from "../../ui/Kicker";
 import { Icon } from "../../ui/Icon";
+import { Breadcrumb } from "../../ui/Breadcrumb";
 import { gsap } from "@/lib/gsap";
 import { CONTACT_STATS, HERO_RESPONDERS } from "./data";
 import { ContactForm } from "./ContactForm";
@@ -53,6 +54,7 @@ export const ContactPageHero = () => {
         <div className="grid items-start gap-12 lg:grid-cols-[0.95fr_1.05fr] lg:gap-16">
           {/* LEFT — warm copy + reassurance */}
           <div className="lg:sticky lg:top-32">
+            <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Contact" }]} />
             <div className="js-ct-stagger mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-[oklch(1_0_0_/_0.04)] px-3 py-[6px] pl-2 font-mono text-[11px] tracking-[0.04em] text-ink-2">
               <span
                 className="pulse-dot relative inline-block flex-shrink-0"
@@ -67,14 +69,15 @@ export const ContactPageHero = () => {
               className="js-ct-stagger m-0 font-display font-medium tracking-[-0.04em]"
               style={{ fontSize: "clamp(38px, 5.2vw, 84px)", lineHeight: 0.98 }}
             >
-              Let&apos;s start
+              Book a demo.
               <br />
-              <span className="grad">a real conversation.</span>
+              <span className="grad">Start something real.</span>
             </h1>
 
             <p className="js-ct-stagger mt-7 max-w-[520px] text-[16px] leading-[1.65] text-ink-2 sm:text-[17px]">
               No chatbots, no &ldquo;account exec will reach out within 5–7 business days&rdquo;.
-              Every message is read by a founding team member, and gets a real reply — usually the same day.
+              Book a demo, start a pilot, or ask a question — every message reaches a founding
+              team member and gets a real reply, usually the same day.
             </p>
 
             {/* Trust strip — stats */}

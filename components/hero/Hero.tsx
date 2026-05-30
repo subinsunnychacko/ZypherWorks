@@ -1,17 +1,24 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import dynamic from "next/dynamic";
 import { Icon } from "../ui/Icon";
 import { ButtonPrimary, ButtonGhost } from "../ui/Buttons";
 import { Container } from "../ui/Container";
 import { gsap } from "@/lib/gsap";
 import { FadeInHeadline } from "./FadeInHeadline";
-import { HeroScene } from "./HeroScene";
+
+/* HeroScene is a pure 3D visual — skip SSR to keep the LCP text fast,
+   then load the canvas after hydration. */
+const HeroScene = dynamic(
+  () => import("./HeroScene").then((m) => ({ default: m.HeroScene })),
+  { ssr: false, loading: () => null },
+);
 
 const STATS = [
-  { n: "3.2M+", l: "events / day" },
-  { n: "99.99%", l: "platform uptime" },
-  { n: "42 ms", l: "avg API latency" },
+  { n: "45K+", l: "events / day" },
+  { n: "99.9%", l: "platform uptime" },
+  { n: "95 ms", l: "avg API latency" },
 ];
 
 export const Hero = () => {
@@ -63,17 +70,17 @@ export const Hero = () => {
               charStagger={0.026}
               baseDelay={0.3}
               lines={[
-                { parts: [{ text: "Intelligent software" }] },
+                { parts: [{ text: "Intelligent automation" }] },
                 { parts: [{ text: "for businesses that" }] },
-                { parts: [{ text: "scale on autopilot.", className: "grad" }] },
+                { parts: [{ text: "scale on results.", className: "grad" }] },
               ]}
             />
           </h1>
 
           <p className="js-hero-stagger m-0 mb-7 max-w-[520px] text-[15px] leading-[1.6] text-ink-2 sm:text-[16px]">
-            ZypherWorks builds adaptive, AI-native platforms that automate the
-            operational work modern businesses get stuck on — so teams can grow
-            without growing the overhead.
+            ZypherWorks is a business automation platform that removes the operational
+            drag modern companies get stuck on — bookings, CRM, billing, workflows —
+            so teams can grow without growing the overhead.
           </p>
 
           <div className="js-hero-stagger flex flex-wrap items-center gap-3">

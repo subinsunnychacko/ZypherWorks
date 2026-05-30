@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { Container } from "../../ui/Container";
 import { Kicker } from "../../ui/Kicker";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
@@ -93,7 +94,7 @@ export const CompanyStory = () => {
               >
                 From one operator
                 <br />
-                <em className="serif-italic text-ink-2">to a platform 11k+ run on.</em>
+                <em className="serif-italic text-ink-2">to a platform 380+ run on.</em>
               </h2>
             </div>
             <p className="max-w-[380px] text-[13px] leading-[1.55] text-ink-2 lg:text-[13.5px]">
@@ -126,7 +127,7 @@ export const CompanyStory = () => {
                     className="relative mt-3 w-full overflow-hidden rounded-[14px] border border-line"
                     style={{ aspectRatio: "16/10" }}
                   >
-                    <img src={m.image} alt={m.title} className="absolute inset-0 h-full w-full object-cover" loading="lazy" />
+                    <Image src={m.image} alt={`${m.title} — ZypherWorks ${m.year}`} fill sizes="(max-width: 1024px) 90vw, 0px" className="object-cover" />
                     <span
                       aria-hidden
                       className="pointer-events-none absolute inset-0"
@@ -232,13 +233,14 @@ export const CompanyStory = () => {
                     boxShadow: "0 30px 60px oklch(0 0 0 / 0.45), 0 0 0 1px oklch(1 0 0 / 0.06) inset",
                   }}
                 >
-                  <img
+                  <Image
                     key={active.year}
                     src={active.image}
-                    alt={active.title}
-                    className="absolute inset-0 h-full w-full object-cover ef-fade-in"
+                    alt={`${active.title} — ZypherWorks ${active.year}`}
+                    fill
+                    sizes="(max-width: 1024px) 0px, 45vw"
+                    className="object-cover ef-fade-in"
                     style={{ filter: "saturate(1.05)" }}
-                    loading="lazy"
                   />
                   <span
                     aria-hidden

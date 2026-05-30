@@ -200,9 +200,9 @@ export const ProductsFeatured = () => {
                         <Icon name={c.ic} size={16} stroke={2} />
                       </div>
                       <div>
-                        <h4 className="m-0 mb-0.5 font-display text-[14.5px] font-semibold tracking-[-0.01em]" style={{ color: "var(--ink-dark)" }}>
+                        <h3 className="m-0 mb-0.5 font-display text-[14.5px] font-semibold tracking-[-0.01em]" style={{ color: "var(--ink-dark)" }}>
                           {c.title}
-                        </h4>
+                        </h3>
                         <p className="m-0 text-[12.5px] leading-[1.5]" style={{ color: "oklch(0.4 0.012 260)" }}>
                           {c.copy}
                         </p>
@@ -397,9 +397,9 @@ export const ProductsFeatured = () => {
                   <Icon name={activeCallout.ic} size={18} stroke={2} />
                 </div>
                 <div>
-                  <h4 className="m-0 mb-1 font-display text-[15px] font-semibold tracking-[-0.01em]" style={{ color: "var(--ink-dark)" }}>
+                  <h3 className="m-0 mb-1 font-display text-[15px] font-semibold tracking-[-0.01em]" style={{ color: "var(--ink-dark)" }}>
                     {activeCallout.title}
-                  </h4>
+                  </h3>
                   <p className="m-0 text-[13px] leading-[1.5]" style={{ color: "oklch(0.4 0.012 260)" }}>
                     {activeCallout.copy}
                   </p>

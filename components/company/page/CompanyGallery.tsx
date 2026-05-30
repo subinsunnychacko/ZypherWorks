@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import { Container } from "../../ui/Container";
 import { Kicker } from "../../ui/Kicker";
 import { Icon } from "../../ui/Icon";
@@ -69,12 +70,13 @@ export const CompanyGallery = () => {
                   boxShadow: "0 18px 36px oklch(0 0 0 / 0.32), 0 1px 0 oklch(1 0 0 / 0.05) inset",
                 }}
               >
-                <img
+                <Image
                   src={photo.src}
                   alt={photo.caption}
-                  className="absolute inset-0 h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.06]"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  className="object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-[1.06]"
                   style={{ filter: "saturate(0.95) contrast(1.02)" }}
-                  loading="lazy"
                 />
 
                 {/* Permanent subtle bottom gradient — readability for the corner index */}

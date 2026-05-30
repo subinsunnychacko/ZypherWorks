@@ -39,7 +39,7 @@ export const CompanyTeam = () => {
               className="m-0 max-w-[720px] font-display font-medium tracking-[-0.03em]"
               style={{ fontSize: "clamp(28px, 3.8vw, 56px)", lineHeight: 1.05 }}
             >
-              Forty-two people.
+              Sixteen people.
               <br />
               <span className="grad-soft">No middle layer.</span>
             </h2>

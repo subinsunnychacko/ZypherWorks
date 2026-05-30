@@ -221,7 +221,9 @@ export const Nav = () => {
 				</Link>
 				<button
 					onClick={openSidebar}
-					aria-label="Open menu"
+					aria-label="Open navigation menu"
+					aria-expanded={mobileOpen}
+					aria-controls="mobile-sidebar"
 					className="flex h-9 w-9 flex-col items-center justify-center gap-[5px] rounded-xl border border-line bg-[oklch(1_0_0_/_0.04)] transition-colors hover:bg-[oklch(1_0_0_/_0.08)]">
 					<span className="block h-px w-5 bg-ink" />
 					<span className="block h-px w-5 bg-ink" />
@@ -246,6 +248,10 @@ export const Nav = () => {
 			{/* ─── MOBILE SIDEBAR ─── */}
 			<div
 				ref={sidebarRef}
+				id="mobile-sidebar"
+				role="dialog"
+				aria-modal="true"
+				aria-label="Navigation menu"
 				className="fixed bottom-0 right-0 top-0 z-[120] flex w-[min(320px,85vw)] flex-col"
 				style={{
 					background: "oklch(0.12 0.014 260)",
@@ -265,7 +271,7 @@ export const Nav = () => {
 					<button
 						onClick={closeSidebar}
 						aria-label="Close menu"
-						className="grid h-8 w-8 place-items-center rounded-lg border border-line bg-[oklch(1_0_0_/_0.04)] text-ink-2 transition-colors hover:bg-[oklch(1_0_0_/_0.08)] hover:text-ink">
+						className="grid h-11 w-11 place-items-center rounded-lg border border-line bg-[oklch(1_0_0_/_0.04)] text-ink-2 transition-colors hover:bg-[oklch(1_0_0_/_0.08)] hover:text-ink">
 						<svg
 							width="14"
 							height="14"

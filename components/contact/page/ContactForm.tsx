@@ -64,9 +64,9 @@ export const ContactForm = () => {
             <path d="M5 11.5L9 15.5L17 7" />
           </svg>
         </div>
-        <h3 className="ef-fade-up m-0 mb-2 text-center font-display text-[26px] font-medium tracking-[-0.02em]" style={{ animationDelay: "60ms" }}>
+        <h2 className="ef-fade-up m-0 mb-2 text-center font-display text-[26px] font-medium tracking-[-0.02em]" style={{ animationDelay: "60ms" }}>
           Message received.
-        </h3>
+        </h2>
         <p className="ef-fade-up mx-auto mb-6 max-w-[420px] text-center text-[14px] leading-[1.55] text-ink-2" style={{ animationDelay: "140ms" }}>
           Thanks{form.name ? `, ${form.name.split(" ")[0]}` : ""}. A founding team member will be reading this within the next four hours and writing you a real reply.
         </p>

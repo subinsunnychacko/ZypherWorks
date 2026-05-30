@@ -25,7 +25,13 @@
 		box-sizing: border-box;
 	}
 	html {
-		scroll-behavior: smooth;
+		/* NOTE: intentionally NOT using `scroll-behavior: smooth` here.
+		   On <html> it makes the browser animate every scroll — including
+		   route-change scroll-to-top. In dev, on-demand compilation shifts
+		   layout mid-animation, the animation is interrupted, and the page
+		   lands partway down. Smooth in-page anchor scrolling is handled by
+		   the SmoothAnchors handler instead, scoped to hash links only. */
+		overscroll-behavior: none;
 	}
 	body {
 		background: var(--bg);
@@ -34,6 +40,7 @@
 		font-feature-settings: "ss01", "cv11";
 		-webkit-font-smoothing: antialiased;
 		overflow-x: hidden;
+		overscroll-behavior: none;
 	}
 	button {
 		font-family: inherit;
@@ -42,6 +49,19 @@
 	a {
 		color: inherit;
 		text-decoration: none;
+	}
+	/* iOS zoom prevention — inputs < 16px trigger automatic zoom on focus.
+	   Scoped to mobile only so desktop design is unchanged. */
+	@media (max-width: 640px) {
+		input, textarea, select {
+			font-size: 16px;
+		}
+	}
+	/* Keyboard focus ring — visible only on tab/keyboard navigation */
+	:focus-visible {
+		outline: 2px solid var(--accent);
+		outline-offset: 3px;
+		border-radius: 4px;
 	}
 }
 
@@ -353,6 +373,11 @@ html {
 /* Hide scrollbar for IE and old Edge */
 body {
 	-ms-overflow-style: none;
+}
+
+/* Pillars — clip horizontal overflow so the w-max track never inflates page layout */
+.pillars-wrap {
+	overflow-x: clip;
 }
 
 /* Pillars — mobile: disable horizontal pinned scroll, stack cards vertically */
