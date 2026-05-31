@@ -42,30 +42,30 @@ export const MILESTONES: Milestone[] = [
   },
   {
     year: "2024",
-    title: "Seed Round · $2.2M",
-    tagline: "Building the team",
+    title: "First paying customers",
+    tagline: "Proving the model",
     description:
-      "Backed by a small group of operator-investors who've built and scaled businesses of their own. The team grew from 4 to 12 — fully remote, no office overhead.",
+      "Still just the two of us — but with a growing list of operators who were willing to bet on us early. Every client brought a new workflow to untangle.",
     image: PICSUM("zw-mile-2024", 1200, 720),
-    metric: { value: "$2.2M", label: "Seed · operator-backed" },
+    metric: { value: "12", label: "paying clients · bootstrapped" },
   },
   {
     year: "2025",
-    title: "Four products. One stack.",
-    tagline: "Multiplying impact",
+    title: "Two products. One stack.",
+    tagline: "Finding our footing",
     description:
-      "Vega CRM, Forge Ops, and Nova Billing shipped on top of the same platform — proving the composable thesis with real paying customers.",
+      "Vega CRM shipped on top of the same platform spine as Ease Fit. Two products, same two engineers — the composable approach started paying off.",
     image: PICSUM("zw-mile-2025", 1200, 720),
-    metric: { value: "240+", label: "operators on the platform" },
+    metric: { value: "45+", label: "operators on the platform" },
   },
   {
     year: "2026",
     title: "Today, and onward",
     tagline: "The next chapter",
     description:
-      "ZypherWorks now powers $2.8M+ of customer revenue flowing through our automation, with a remote-first team of 16 across 4 timezones — and we're just getting started.",
+      "Two founders, one shared mission. ZypherWorks now runs $1.2M+ of customer revenue through our automation — and we're building toward the next product.",
     image: PICSUM("zw-mile-2026", 1200, 720),
-    metric: { value: "$2.8M", label: "customer revenue · automated" },
+    metric: { value: "$1.2M", label: "customer revenue · automated" },
   },
 ];
 
@@ -78,14 +78,8 @@ export type TeamMember = {
 };
 
 export const TEAM: TeamMember[] = [
-  { name: "Aria Chen",       role: "Co-founder · CEO",         bio: "Previously product at Stripe and shipped two acquired SaaS companies before ZW.",                            image: PICSUM("zw-team-aria",    480, 600), location: "San Francisco" },
-  { name: "Devon Hart",      role: "Co-founder · CTO",         bio: "Built distributed systems at Vercel and Cloudflare. Believes platforms should be boring on purpose.",         image: PICSUM("zw-team-devon",   480, 600), location: "Lisbon" },
-  { name: "Priya Reddy",     role: "Head of Design",           bio: "Led design at Linear's enterprise team. Quietly the most opinionated person about typography in the building.", image: PICSUM("zw-team-priya",   480, 600), location: "London" },
-  { name: "Marcus Yates",    role: "Head of Engineering",      bio: "Ex-Airbnb · scaled the host platform. Spent his weekends building synth patches.",                              image: PICSUM("zw-team-marcus",  480, 600), location: "Berlin" },
-  { name: "Elena Park",      role: "Head of Customer Ops",     bio: "Ran the customer success team at Notion through Series C. Treats every onboarding like opening night.",        image: PICSUM("zw-team-elena",   480, 600), location: "New York" },
-  { name: "Sam Okafor",      role: "Principal ML Engineer",    bio: "PhD from CMU. Made our scoring models behave on real-world operator data — not just academic benchmarks.",     image: PICSUM("zw-team-sam",     480, 600), location: "Toronto" },
-  { name: "Nina Volkov",     role: "Head of Sales",            bio: "Sold enterprise platforms at Datadog. Genuinely believes ZW's pricing model is the right one — rare in sales.", image: PICSUM("zw-team-nina",    480, 600), location: "Amsterdam" },
-  { name: "Theo Marchetti",  role: "Founding Designer",        bio: "First design hire. Drew every illustration on this site by hand at the cafe across from the Lisbon office.",   image: PICSUM("zw-team-theo",    480, 600), location: "Lisbon" },
+  { name: "Aria Chen",   role: "Co-founder · CEO", bio: "Started ZypherWorks after watching a fitness operator manage their entire business in a spreadsheet. Obsessed with making software that feels invisible.", image: PICSUM("zw-team-aria",  480, 600), location: "San Francisco" },
+  { name: "Devon Hart",  role: "Co-founder · CTO", bio: "Builds things that don't require a manual to run. Believes the best software is the kind you forget is there.",                                          image: PICSUM("zw-team-devon", 480, 600), location: "Lisbon" },
 ];
 
 export type Value = {
@@ -118,12 +112,8 @@ export const VALUES: Value[] = [
   {
     ic: "shield",
     title: "Boring infrastructure",
-    description: "The platform should be the calmest part of your operation. Multi-region, observable, SOC 2 II — designed to never make the news.",
+    description: "The platform should be the calmest part of your operation. Observable, reliable, and designed to never surprise you.",
     accent: "oklch(0.85 0.16 70)",
-    externalLink: {
-      href: "https://www.aicpa-cima.com/topic/audit-assurance/soc-suite-of-services",
-      label: "What is SOC 2 II?",
-    },
   },
   {
     ic: "spark",
@@ -134,16 +124,16 @@ export const VALUES: Value[] = [
   {
     ic: "layers",
     title: "Stay close after launch",
-    description: "Implementation is the start, not the finish. Every platform we ship has a named team running it alongside the customer — indefinitely.",
+    description: "Implementation is the start, not the finish. Every platform we ship has one of us running it alongside the customer — indefinitely.",
     accent: "oklch(0.78 0.16 280)",
   },
 ];
 
 export const COMPANY_STATS = [
-  { value: "2021", label: "founded · remote-first" },
-  { value: "16",   label: "team across 4 timezones" },
-  { value: "240+", label: "operators served daily" },
-  { value: "$2.8M", label: "of revenue automated" },
+  { value: "2021",  label: "founded · remote-first" },
+  { value: "2",     label: "founders · SF & Lisbon" },
+  { value: "45+",   label: "operators on the platform" },
+  { value: "$1.2M", label: "of customer revenue automated" },
 ];
 
 export type GalleryPhoto = {
@@ -153,13 +143,13 @@ export type GalleryPhoto = {
 };
 
 export const GALLERY: GalleryPhoto[] = [
-  { src: PICSUM("zw-culture-1",  900, 600),  caption: "Annual offsite · Lisbon 2025",      span: "wide" },
-  { src: PICSUM("zw-culture-2",  600, 800),  caption: "The build room · SF HQ",            span: "tall" },
-  { src: PICSUM("zw-culture-3",  600, 500),  caption: "Quarterly platform review" },
-  { src: PICSUM("zw-culture-4",  600, 500),  caption: "Customer dinner · NYC" },
-  { src: PICSUM("zw-culture-5",  900, 500),  caption: "Demo day · NYC meetup",             span: "wide" },
+  { src: PICSUM("zw-culture-1",  900, 600),  caption: "Working from Lisbon · 2025",        span: "wide" },
+  { src: PICSUM("zw-culture-2",  600, 800),  caption: "The home office · San Francisco",   span: "tall" },
+  { src: PICSUM("zw-culture-3",  600, 500),  caption: "Monthly product sync" },
+  { src: PICSUM("zw-culture-4",  600, 500),  caption: "Coffee + customer calls · always" },
+  { src: PICSUM("zw-culture-5",  900, 500),  caption: "Community meetup · San Francisco",  span: "wide" },
   { src: PICSUM("zw-culture-6",  600, 700),  caption: "Whiteboards, always",               span: "tall" },
-  { src: PICSUM("zw-culture-7",  600, 500),  caption: "Lisbon team retreat" },
+  { src: PICSUM("zw-culture-7",  600, 500),  caption: "Working week in Lisbon" },
   { src: PICSUM("zw-culture-8",  600, 500),  caption: "First customer launch party" },
 ];
 

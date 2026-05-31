@@ -1,130 +1,80 @@
 import type { IconName } from "../../ui/Icon";
 
-export type TierFeature = { label: string; included: boolean };
+/* ─────────────────────────────────────────────────────────────
+   Pricing is custom — scoped per engagement. No public tiers.
+   These drive the 3D spotlight + "how pricing works" cards.
+   ───────────────────────────────────────────────────────────── */
 
-export type Tier = {
-  id: string;
-  name: string;
-  tagline: string;
-  priceLabel: string;
-  priceUnit?: string;
-  priceCaption?: string;
+/** Value props shown beneath the spotlight CTA. */
+export const VALUE_PROPS: { ic: IconName; value: string; label: string }[] = [
+  { ic: "shield", value: "30d", label: "commitment, max" },
+  { ic: "refresh", value: "60d", label: "risk-free pilot" },
+  { ic: "cube", value: "100%", label: "data portability" },
+];
+
+/** "How pricing works" — the model, not tiers. Drives the 3D-tilt cards. */
+export type Principle = {
+  ic: IconName;
+  step: string;
+  title: string;
   description: string;
-  features: TierFeature[];
-  cta: string;
-  ctaHref?: string;
   accent: string;
   gradient: string;
-  popular?: boolean;
-  popularLabel?: string;
 };
 
-export const TIERS: Tier[] = [
+export const PRINCIPLES: Principle[] = [
   {
-    id: "launch",
-    name: "Launch",
-    tagline: "Pilot one workflow, prove the lift.",
-    priceLabel: "$1.2k",
-    priceUnit: "/mo",
-    priceCaption: "starting · 60-day pilot",
+    ic: "spark",
+    step: "01",
+    title: "Start with a pilot",
     description:
-      "Get a tailored platform skeleton with one core workflow automated. Perfect for proving value before scaling up.",
-    features: [
-      { label: "1 platform module", included: true },
-      { label: "Up to 5 operators", included: true },
-      { label: "Typed SDK + REST API", included: true },
-      { label: "Email support · 24h SLA", included: true },
-      { label: "Quarterly platform review", included: true },
-      { label: "Per-tenant ML scoring", included: false },
-      { label: "Multi-region deployment", included: false },
-    ],
-    cta: "Start a pilot",
+      "A focused 60-day engagement on one real workflow. You see the lift before committing to anything bigger.",
     accent: "oklch(0.78 0.17 220)",
     gradient: "linear-gradient(135deg, oklch(0.72 0.18 240), oklch(0.55 0.2 260))",
   },
   {
-    id: "scale",
-    name: "Scale",
-    tagline: "The full platform, run alongside you.",
-    priceLabel: "$3.8k",
-    priceUnit: "/mo",
-    priceCaption: "starting · most teams ship here",
+    ic: "cube",
+    step: "02",
+    title: "Pay for the platform, not seats",
     description:
-      "The full ZypherWorks platform with multiple modules, per-tenant ML, and a dedicated team running it alongside you.",
-    features: [
-      { label: "Up to 5 platform modules", included: true },
-      { label: "Unlimited operators", included: true },
-      { label: "Per-tenant ML scoring", included: true },
-      { label: "Priority support · 4h SLA", included: true },
-      { label: "Monthly platform reviews", included: true },
-      { label: "Custom integrations included", included: true },
-      { label: "Dedicated success lead", included: true },
-    ],
-    cta: "Book a Scale call",
+      "One fixed monthly fee plus the modules you actually use. No per-user math, no surprise overages.",
     accent: "oklch(0.85 0.16 145)",
     gradient: "linear-gradient(135deg, oklch(0.85 0.16 145), oklch(0.65 0.18 165))",
-    popular: true,
-    popularLabel: "Most teams ship here",
   },
   {
-    id: "custom",
-    name: "Custom",
-    tagline: "Built for operations that don't fit a tier.",
-    priceLabel: "Tailored",
-    priceCaption: "based on operational scope",
+    ic: "layers",
+    step: "03",
+    title: "Scale on your terms",
     description:
-      "Multi-region deployment, dedicated infra, modules built specifically for your operational shape, and a named platform team.",
-    features: [
-      { label: "Unlimited platform modules", included: true },
-      { label: "Custom-built modules", included: true },
-      { label: "Multi-region · single-tenant", included: true },
-      { label: "24/7 phone support · 30m SLA", included: true },
-      { label: "Quarterly on-site reviews", included: true },
-      { label: "SOC 2 + ISO 27001 + BAA", included: true },
-      { label: "Named platform engineering team", included: true },
-    ],
-    cta: "Talk to founders",
+      "Add modules or step up scope at any month boundary. Your data and workflows carry over untouched.",
     accent: "oklch(0.85 0.16 70)",
     gradient: "linear-gradient(135deg, oklch(0.85 0.16 70), oklch(0.65 0.2 50))",
   },
 ];
 
-export const VALUE_PROPS: { ic: IconName; label: string }[] = [
-  { ic: "shield", label: "No commitment beyond 30 days" },
-  { ic: "refresh", label: "60-day risk-free pilot" },
-  { ic: "spark",  label: "ROI visible before you commit" },
-];
-
 export const PRICING_FAQ: { q: string; a: string }[] = [
   {
+    q: "Why don't you list prices?",
+    a: "Because every engagement is scoped to your operation — the workflows, the modules, the integrations. A fixed price list would either overcharge a small operator or undersell a complex build. We'd rather show you a real number for your real situation, usually within two days of talking.",
+  },
+  {
     q: "How is pricing actually structured?",
-    a: "Every plan is a fixed monthly fee plus usage-based modules. There are no seat counts. The number above is the platform fee — usage tiers are transparent and listed in our quote.",
+    a: "A fixed monthly platform fee plus the modules you use. No seat counts, no per-user pricing. Once we understand your scope, the number is transparent and laid out in full in your quote.",
   },
   {
     q: "Can I start small and scale up later?",
-    a: "Yes. The Launch tier is designed as a pilot — you can graduate to Scale or Custom at any month boundary without re-platforming. Your data, workflows, and integrations carry over unchanged.",
+    a: "Yes. Most teams start with a 60-day pilot on a single workflow, then expand once they've seen the lift. Your data, workflows, and integrations carry over unchanged — no re-platforming.",
   },
   {
     q: "What's the typical project timeline?",
-    a: "Six weeks from kickoff to first ship for Launch. Eight to twelve weeks for the full Scale platform. Custom timelines depend on scope — but the first phase always ships in under 8 weeks regardless of tier.",
+    a: "Around six weeks from kickoff to first ship for a pilot. Larger builds take eight to twelve weeks — but the first phase always ships in under eight weeks, regardless of scope.",
   },
   {
     q: "What if it doesn't work out?",
-    a: "If we haven't measurably moved an operational KPI in 60 days, we refund the platform fee and you keep everything we built. We've never had to invoke this.",
+    a: "If we haven't measurably moved an operational KPI in 60 days, we refund the platform fee and you keep everything we built. We're a two-person team and our reputation is the whole business — so we mean it.",
   },
   {
     q: "Who actually builds the platform?",
-    a: "The same founding engineering team that built our flagship Ease Fit platform. You're not handed off to junior contractors after the sales call — you work directly with the people designing the system.",
-  },
-  {
-    q: "What about data ownership and security?",
-    a: "Your data lives in your cloud account on Scale and Custom, or our SOC 2 II infra on Launch. You retain full ownership at every tier and can export at any time via the typed SDK.",
+    a: "The two founders. The same people who built our flagship Ease Fit platform. There's no sales handoff and no junior contractors — you work directly with the people designing and writing the system.",
   },
 ];
-
-export const ROI_DEFAULTS = {
-  teamSize: 12,
-  monthlyOps: 1800,
-  hoursPerOp: 0.5,
-  hourlyCost: 60,
-};
