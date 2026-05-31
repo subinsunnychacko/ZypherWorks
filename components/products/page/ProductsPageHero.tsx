@@ -77,7 +77,9 @@ export const ProductsPageHero = () => {
 
 			<Container className="relative z-[1] text-center">
 				<div className="text-left">
-					<Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Products" }]} />
+					<Breadcrumb
+						items={[{ label: "Home", href: "/" }, { label: "Products" }]}
+					/>
 				</div>
 				{/* Eyebrow pill */}
 				<div className="js-ph-stagger mx-auto mb-7 inline-flex items-center gap-2 rounded-full border border-line bg-[oklch(1_0_0_/_0.04)] px-3 py-[6px] pl-2 font-mono text-[11px] tracking-[0.04em] text-ink-2">
@@ -112,8 +114,8 @@ export const ProductsPageHero = () => {
 				{/* Subtitle */}
 				<p className="js-ph-stagger mx-auto mt-9 max-w-[640px] text-[16px] leading-[1.65] text-ink-2 sm:text-[17px]">
 					Every business automation product is built on the same platform
-					primitives — bookings, CRM, workflows, billing — so they share the
-					same data, the same operator surface, and scale together.
+					primitives — bookings, CRM, workflows, billing — so they share
+					the same data, the same operator surface, and scale together.
 				</p>
 
 				{/* CTAs */}
@@ -142,14 +144,6 @@ export const ProductsPageHero = () => {
 						<Icon name="play" size={11} />
 						See Ease Fit in action
 					</a>
-				</div>
-
-				{/* Stats row */}
-				<div className="js-ph-stagger mx-auto mt-14 flex flex-wrap items-center justify-center gap-[clamp(28px,4vw,64px)] border-t border-line pt-8 sm:pt-9">
-					<Stat n={String(PRODUCTS.length)} l="products in the family" />
-					<Stat n="380+" l="operators on the platform" />
-					<Stat n="95 ms" l="avg API latency across all" />
-					<Stat n="87%" l="retention · year one" />
 				</div>
 			</Container>
 
