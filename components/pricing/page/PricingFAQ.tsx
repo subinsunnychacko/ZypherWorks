@@ -6,27 +6,6 @@ import { Kicker } from "../../ui/Kicker";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
 import { PRICING_FAQ } from "./data";
 
-const EXT = "text-accent underline underline-offset-2 hover:text-ink-2 transition-colors duration-200";
-
-/* Rich JSX overrides for FAQ answers that reference external standards */
-const RICH_ANSWERS: Record<number, React.ReactNode> = {
-  5: (
-    <>
-      Your data lives in your cloud account on Scale and Custom, or our{" "}
-      <a
-        href="https://www.aicpa-cima.com/topic/audit-assurance/soc-suite-of-services"
-        target="_blank"
-        rel="noopener noreferrer"
-        className={EXT}
-      >
-        SOC 2 Type II
-      </a>
-      {" "}infra on Launch. You retain full ownership at every tier and can export at any time
-      via the typed SDK.
-    </>
-  ),
-};
-
 export const PricingFAQ = () => {
   const ref = useRef<HTMLElement>(null);
   const [openIdx, setOpenIdx] = useState<number | null>(0);
@@ -99,7 +78,7 @@ export const PricingFAQ = () => {
                 >
                   <div className="overflow-hidden">
                     <p className="m-0 px-5 pb-6 text-[13.5px] leading-[1.65] text-ink-2 sm:px-6 sm:text-[14.5px]">
-                      {RICH_ANSWERS[i] ?? item.a}
+                      {item.a}
                     </p>
                   </div>
                 </div>

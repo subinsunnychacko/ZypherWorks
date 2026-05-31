@@ -6,33 +6,33 @@ import { Atmosphere } from "@/components/Atmosphere";
 import { Nav } from "@/components/Nav";
 import { Footer } from "@/components/Footer";
 import { PricingPageHero } from "@/components/pricing/page/PricingPageHero";
-import { PricingTiers } from "@/components/pricing/page/PricingTiers";
-import { PricingCalculator } from "@/components/pricing/page/PricingCalculator";
+import { PricingSpotlight } from "@/components/pricing/page/PricingSpotlight";
+import { PricingModel } from "@/components/pricing/page/PricingModel";
 import { PricingFAQ } from "@/components/pricing/page/PricingFAQ";
 import { PricingPageCTA } from "@/components/pricing/page/PricingPageCTA";
 
+const DESC =
+  "No tiers, no seat math. ZypherWorks pricing is scoped to your operation — talk directly to the two founders and get a tailored quote, usually within two days.";
+
 export const metadata: Metadata = {
-  title: "Pricing Plans — Business Automation Tiers",
+  title: "Pricing — Scoped to Your Operation",
   alternates: { canonical: `${SITE_URL}/pricing` },
-  description:
-    "Transparent business automation pricing from $1.2k/mo. No seat counts, no hidden fees. Start with a risk-free 60-day pilot — ROI visible before you commit.",
+  description: DESC,
   openGraph: {
-    title: "Pricing Plans — Business Automation Tiers | ZypherWorks",
-    description:
-      "Transparent business automation pricing from $1.2k/mo. No seat counts, no hidden fees. Start with a risk-free 60-day pilot — ROI visible before you commit.",
+    title: "Pricing — Scoped to Your Operation | ZypherWorks",
+    description: DESC,
     url: `${SITE_URL}/pricing`,
     siteName: "ZypherWorks",
     locale: "en_US",
     type: "website",
-    images: [{ url: "/og/pricing.png", width: 1200, height: 630, alt: "ZypherWorks — Transparent Business Automation Pricing Plans" }],
+    images: [{ url: "/og/pricing.png", width: 1200, height: 630, alt: "ZypherWorks — Custom Business Automation Pricing" }],
   },
   twitter: {
     card: "summary_large_image",
     site: "@zypherworks",
     creator: "@zypherworks",
-    title: "Pricing Plans — Business Automation Tiers | ZypherWorks",
-    description:
-      "Transparent business automation pricing from $1.2k/mo. No seat counts, no hidden fees. Start with a risk-free 60-day pilot — ROI visible before you commit.",
+    title: "Pricing — Scoped to Your Operation | ZypherWorks",
+    description: DESC,
     images: ["/og/pricing.png"],
   },
 };
@@ -47,8 +47,8 @@ export default function PricingPage() {
       <Atmosphere />
       <Nav />
       <PricingPageHero />
-      <PricingTiers />
-      <PricingCalculator />
+      <PricingSpotlight />
+      <PricingModel />
       <PricingFAQ />
       <PricingPageCTA />
       <Footer />

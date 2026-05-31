@@ -40,7 +40,7 @@ export const CHANNELS: Channel[] = [
     ic: "spark",
     label: "Enterprise sales",
     value: "sales@zypherworks.io",
-    description: "For teams with custom requirements, multi-region deployment, or compliance needs. Talk to Nina or Aria directly.",
+    description: "For teams with custom requirements or larger operational scope. Talk directly to our founders.",
     href: "mailto:sales@zypherworks.io",
     accent: "oklch(0.85 0.16 70)",
     gradient: "linear-gradient(135deg, oklch(0.85 0.16 70), oklch(0.65 0.2 50))",
@@ -118,14 +118,12 @@ export const INQUIRY_TYPES: InquiryType[] = [
 ];
 
 export const CONTACT_STATS = [
-  { value: "~4h",   label: "first response · weekdays" },
-  { value: "100%",  label: "replied to by a human" },
-  { value: "9",     label: "timezones · we work around yours" },
+  { value: "~4h",  label: "first response · weekdays" },
+  { value: "100%", label: "replied to by a real person" },
+  { value: "2",    label: "founders · SF & Lisbon" },
 ];
 
 export const HERO_RESPONDERS = [
-  { name: "Aria",   role: "CEO",          color: "oklch(0.72 0.18 25)" },
-  { name: "Devon",  role: "CTO",          color: "oklch(0.78 0.17 220)" },
-  { name: "Nina",   role: "Head of Sales", color: "oklch(0.85 0.16 145)" },
-  { name: "Elena",  role: "Customer Ops",  color: "oklch(0.85 0.16 70)" },
+  { name: "Aria",  role: "Co-founder · CEO", color: "oklch(0.72 0.18 25)" },
+  { name: "Devon", role: "Co-founder · CTO", color: "oklch(0.78 0.17 220)" },
 ];

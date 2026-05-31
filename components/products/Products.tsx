@@ -23,9 +23,9 @@ const FEATURES: { ic: IconName; t: string; d: string }[] = [
 ];
 
 const OTHER = [
-  { l: "v", t: "Vega CRM", d: "Relationship intelligence for sales teams who treat every conversation as data.", c: "linear-gradient(135deg, oklch(0.7 0.18 25), oklch(0.55 0.2 350))", s: "Live" },
-  { l: "f", t: "Forge Ops", d: "Headless workflow engine — triggers, branches and humans in one runtime.", c: "linear-gradient(135deg, oklch(0.7 0.18 60), oklch(0.55 0.2 30))", s: "Live" },
-  { l: "l", t: "Lume Insight", d: "Operator-grade analytics with model-aware anomaly detection out of the box.", c: "linear-gradient(135deg, oklch(0.7 0.16 280), oklch(0.5 0.2 250))", s: "Q3 26 · Beta" },
+  { l: "v", t: "Vega CRM",     d: "Relationship intelligence for sales teams who treat every conversation as data.", c: "linear-gradient(135deg, oklch(0.7 0.18 25), oklch(0.55 0.2 350))", s: "Live" },
+  { l: "f", t: "Forge Ops",    d: "Headless workflow engine — triggers, branches and humans in one runtime.",       c: "linear-gradient(135deg, oklch(0.7 0.18 60), oklch(0.55 0.2 30))",  s: "Early access" },
+  { l: "l", t: "Lume Insight", d: "Operator-grade analytics with built-in anomaly detection — no extra setup.",    c: "linear-gradient(135deg, oklch(0.7 0.16 280), oklch(0.5 0.2 250))", s: "Q3 26 · Beta" },
 ];
 
 export const Products = () => {
@@ -92,7 +92,7 @@ export const Products = () => {
             </h2>
           </div>
           <div className="flex flex-wrap gap-6 text-[13px]" style={{ color: "oklch(0.35 0.012 260)" }}>
-            {[["4", "live products"], ["380+", "operators"], ["87%", "retention · yr 1"]].map(([b, l]) => (
+            {[["2", "live products"], ["45+", "operators"], ["87%", "retention · yr 1"]].map(([b, l]) => (
               <div key={l}>
                 <b className="mb-1 block font-display text-[16px] font-medium" style={{ color: "var(--ink-dark)" }}>{b}</b>
                 {l}
@@ -265,10 +265,10 @@ export const Products = () => {
             </div>
             <div>
               <div className="font-display text-[16px] font-medium tracking-[-0.01em]" style={{ color: "var(--ink-dark)" }}>
-                Explore all six products
+                See all products
               </div>
               <div className="mt-0.5 font-mono text-[11px] uppercase tracking-[0.1em]" style={{ color: "oklch(0.5 0.012 260)" }}>
-                Operations · Sales · Automation · Analytics · Finance · Comms
+                Operations · Sales · Automation · Analytics
               </div>
             </div>
           </div>

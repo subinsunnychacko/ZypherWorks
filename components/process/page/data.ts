@@ -101,19 +101,19 @@ export const PHASES: Phase[] = [
     duration: "Ongoing",
     tagline: "Run it with you",
     description:
-      "We don't disappear at launch — your platform is a service. Monitored 24/7, evolved quarterly, and scaled with your business.",
+      "We don't disappear at launch — your platform is a service. Monitored, evolved quarterly, and scaled with your business.",
     activities: [
-      "24/7 monitoring",
+      "Uptime monitoring + alerts",
       "Quarterly platform reviews",
       "Iterative feature delivery",
       "Capacity & cost planning",
     ],
     deliverables: [
-      "99.9% uptime SLA",
+      "99.9% uptime target",
       "Quarterly roadmap",
-      "Dedicated platform team",
+      "Direct founder support",
     ],
-    metric: { value: "99.9%", label: "uptime SLA · monitored 24/7" },
+    metric: { value: "99.9%", label: "uptime target · monitored" },
     visual: "operate",
     accent: "oklch(0.85 0.16 70)",
     gradient: "linear-gradient(135deg, oklch(0.85 0.16 70), oklch(0.65 0.2 50))",
@@ -122,8 +122,8 @@ export const PHASES: Phase[] = [
 ];
 
 export const PROCESS_STATS = [
-  { value: "4", label: "phases · end-to-end" },
+  { value: "4",     label: "phases · end-to-end" },
   { value: "~6 wk", label: "from kickoff to first ship" },
-  { value: "3.8×", label: "ops throughput · 90 days" },
-  { value: "94%", label: "of clients retained yr 1" },
+  { value: "2×+",   label: "ops throughput · 90 days" },
+  { value: "100%",  label: "of clients still with us" },
 ];

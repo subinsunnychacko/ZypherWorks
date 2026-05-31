@@ -35,8 +35,8 @@ export const PRODUCTS: Product[] = [
     gradient: "linear-gradient(135deg, oklch(0.85 0.16 145), oklch(0.65 0.18 165))",
     accent: "oklch(0.78 0.17 155)",
     metrics: [
-      { label: "operators", value: "380+" },
-      { label: "bookings · mo", value: "82k" },
+      { label: "operators", value: "45+" },
+      { label: "bookings · mo", value: "8k" },
       { label: "retention · yr 1", value: "87%" },
     ],
     features: [
@@ -60,8 +60,8 @@ export const PRODUCTS: Product[] = [
     gradient: "linear-gradient(135deg, oklch(0.72 0.2 25), oklch(0.55 0.22 350))",
     accent: "oklch(0.72 0.2 25)",
     metrics: [
-      { label: "pipelines", value: "280" },
-      { label: "forecast accuracy", value: "84%" },
+      { label: "pipelines", value: "28" },
+      { label: "avg deal visibility", value: "Full" },
       { label: "conversion lift", value: "+18%" },
     ],
     features: [
@@ -85,9 +85,9 @@ export const PRODUCTS: Product[] = [
     gradient: "linear-gradient(135deg, oklch(0.78 0.17 60), oklch(0.58 0.22 30))",
     accent: "oklch(0.82 0.17 55)",
     metrics: [
-      { label: "workflows", value: "2.1k" },
+      { label: "workflows", value: "140" },
       { label: "p95 latency", value: "220ms" },
-      { label: "triggers", value: "40+" },
+      { label: "triggers", value: "30+" },
     ],
     features: [
       { ic: "bolt", label: "Event triggers" },
@@ -130,14 +130,14 @@ export const PRODUCTS: Product[] = [
     description:
       "Usage-metered billing, automated dunning and revenue recognition — built for product-led pricing models.",
     category: "Finance",
-    status: "live",
-    statusLabel: "Live",
+    status: "beta",
+    statusLabel: "Q4 26 · Beta",
     gradient: "linear-gradient(135deg, oklch(0.8 0.16 195), oklch(0.55 0.2 220))",
     accent: "oklch(0.8 0.16 195)",
     metrics: [
-      { label: "MRR processed", value: "$840k" },
-      { label: "failed-pay recovery", value: "+22%" },
-      { label: "jurisdictions", value: "12" },
+      { label: "billing models", value: "Usage + flat" },
+      { label: "auto dunning", value: "Built-in" },
+      { label: "currencies", value: "Multi" },
     ],
     features: [
       { ic: "chart", label: "Usage metering" },

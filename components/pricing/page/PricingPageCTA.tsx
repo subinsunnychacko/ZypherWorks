@@ -67,9 +67,8 @@ export const PricingPageCTA = () => {
         </em>
       </h2>
       <p className="js-pcta relative mx-auto mb-9 mt-[26px] max-w-[580px] text-[16px] leading-[1.55] text-ink-2 sm:text-[17px]">
-        Tell us about the operational work slowing your team down. You&apos;ll get a custom quote
-        within 48 hours, plus the same operating-cost model we used in the calculator above —
-        applied to your numbers.
+        Tell us about the operational work slowing your team down. You&apos;ll get a custom
+        quote within 48 hours — scoped to your numbers, straight from the founders.
       </p>
       <div className="js-pcta relative flex flex-wrap justify-center gap-3">
         <ButtonPrimary href="/contact">Get a custom quote</ButtonPrimary>
